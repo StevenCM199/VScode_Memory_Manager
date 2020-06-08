@@ -6,11 +6,15 @@
 #define PROYECTO1_CALC_H
 
 #include <cstdlib>
+#include "Garbage Collector/GCPtr.h"
 
 template < typename T > class VSPtr
 {
 private:
     T*    pData; // Generic pointer to be stored
+    GCPtr<VSPtr<T>> * garbageCollector; // instantiate GCPtr
+    uint64_t ID;
+
 public:
     VSPtr(T* pValue) : pData(pValue)
     {
@@ -24,6 +28,7 @@ public:
     ~VSPtr()
     {
         delete pData;
+
     }
 
     T& operator* ()
@@ -40,8 +45,13 @@ public:
         return *pData;
     }
 
+    void destructorVSPtr(){
+        //call Garbage collector to indicate that the reference is destroyed
+        garbageCollector->decreaseReferences(this->ID);
+        garbageCollector->updateList();
+        free(this->pData);
 
-
+    }
 };
 
 
