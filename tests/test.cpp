@@ -2,7 +2,7 @@
 // Created by steven on 29/5/20.
 //
 #include <stdio.h>
-#include "../calc.h"
+#include "../VSPtr.h"
 #include <iostream>
 
 

@@ -2,8 +2,8 @@
 // Created by steven on 29/5/20.
 //
 
-#ifndef PROYECTO1_CALC_H
-#define PROYECTO1_CALC_H
+#ifndef PROYECTO1_VSPTR_H
+#define PROYECTO1_VSPTR_H
 
 #include <cstdlib>
 #include "Garbage Collector/GCPtr.h"
@@ -57,4 +57,4 @@ public:
 
 int add_values(int a , int b);
 
-#endif //PROYECTO1_CALC_H
+#endif //PROYECTO1_VSPTR_H
