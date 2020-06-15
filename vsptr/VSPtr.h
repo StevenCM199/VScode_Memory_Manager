@@ -6,14 +6,19 @@
 #define PROYECTO1_VSPTR_H
 
 #include <cstdlib>
-#include "Garbage Collector/GCPtr.h"
+#include "../Garbage Collector/GCPtr.h"
+#include "../client/Client.h"
 
 template < typename T > class VSPtr
 {
 private:
     T*    pData; // Generic pointer to be stored
     GCPtr<VSPtr<T>> * garbageCollector; // instantiate GCPtr
+    Client * client;
+    ClientManagerJSON clientManager;
     uint64_t ID;
+    std::string server;
+
 
 public:
     VSPtr(T* pValue) : pData(pValue)
@@ -52,9 +57,14 @@ public:
         free(this->pData);
 
     }
+
+    static void vsptr_init(std::string IP, int puerto);
+
+    T operator=(const T &data);
+
+    VSPtr<T> &operator=(const VSPtr<T> &pointer);
+
+
 };
-
-
-int add_values(int a , int b);
 
 #endif //PROYECTO1_VSPTR_H

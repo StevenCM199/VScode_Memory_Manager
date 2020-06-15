@@ -2,9 +2,9 @@
 // Created by steven on 29/5/20.
 //
 #include <stdio.h>
-#include "../VSPtr.h"
+#include "../vsptr/VSPtr.h"
 #include <iostream>
-
+/**
 
 int add_values(int i, int i1);
 
@@ -19,9 +19,8 @@ int main(int argc, char* argv[]){
 
 
 
-    /*int p = 5;
-    std::cout << &p;*/
+    int p = 5;
+    std::cout << &p;
 
     return 0;
-}
-
+}*/
